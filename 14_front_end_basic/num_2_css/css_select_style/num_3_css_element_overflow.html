@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS元素溢出</title>
+    <!--    元素溢出示例代码-->
+    <style>
+        .box1 {
+            width: 100px;
+            height: 200px;
+            background: red;
+            /* 在父级上设置子元素溢出的部分如何显示 */
+            /* overflow: hidden; */
+            overflow: auto;
+        }
+
+        .box2 {
+            width: 50px;
+            height: 300px;
+            background: yellow;
+        }
+    </style>
+
+</head>
+<!--
+    CSS元素溢出:
+        当子元素(标签)的尺寸超过父元素(标签)的尺寸时，此时需要设置父元素显示溢出的子元素的方式，设置的方法是通过overflow属性来完成
+        overflow设置项:
+            1. visible:默认值, 显示子标签溢出部分
+            2. hidden: 隐藏子标签溢出部分
+            3. auto: 如果子标签溢出, 可以滚动查看其余的内容
+    -->
+<body>
+
+<div class="box1">
+    <div class="box2">hello</div>
+</div>
+
+</body>
+</html>

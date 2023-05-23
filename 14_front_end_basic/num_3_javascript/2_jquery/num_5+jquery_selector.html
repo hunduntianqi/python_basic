@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+  <script src="./jquery-1.12.4.min.js"></script>
+  <script>
+    $(function() {
+      // 获取标签对象, 标签选择器
+      var $p = $("p");
+      alert($p.length);
+      // 通过jQuery设置标签样式
+      $p.css({"color": "red"});
+
+      // 类选择器
+      var $div=$(".div1");
+      alert($div.length);
+      $div.css({"font-size":"30px","font-weight":"bold", "color":"blue"});
+
+      // id选择器
+      var $Id=$("#myId");
+      alert($Id.length);
+      $Id.css({"color": "pink"});
+
+      // 层级选择器
+      var $h1=$("div h1");
+      alert($h1.length);
+      $h1.css({"color":"yellow", "font-size":"50px"});
+
+      // 属性选择器
+      var $in = $("input[name=按钮]");
+      alert($in.length);
+    });
+  </script>
+</head>
+<body>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+  <p>hello</p>
+  <div class="div1">哈哈</div>
+  <div id="myId">嘻嘻</div>
+
+  <div>
+    <h1>混沌无敌</h1>
+    <h1>鸿蒙无量</h1>
+  </div>
+
+  <input type="text">
+  <input type="button" value="点一下试试">
+
+</body>
+</html>

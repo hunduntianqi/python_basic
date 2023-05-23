@@ -1,0 +1,35 @@
+<!-- css在style标签中写 -->
+<!-- JavaScript在script中写 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js三种引入方式</title>
+    <style>
+        input{
+            background-color: blue;
+        }
+    </style>
+    <!-- JS的使用:1.行内式;2.内嵌式;3.外链式 -->
+    <!-- 2.内嵌式 使用script 标签定义,写在head标签中 -->
+    <script>
+        // js注释方式
+        alert("内嵌式")
+
+    </script>
+
+    <!-- 3.外链式 在外部定义js文件,使用 script标签的src属性连接-->
+    <script src="./main.js">
+        func();
+
+    </script>
+</head>
+<body>
+    <!-- 1.行内式:主要用于事件 -->
+    <input type="button" value="你点我一下试试！" onclick="alert('试试就试试！！')">
+    
+</body>
+</html>

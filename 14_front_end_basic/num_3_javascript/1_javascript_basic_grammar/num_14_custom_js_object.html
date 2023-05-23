@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义JavaScript对象</title>
+    <!--1. 通过顶级object类型实例化一个对象-->
+     <script>
+        var person = new Object();
+        // 添加属性：
+        person.name = '郭鹏涛';
+        person.age = '24';
+        // 添加方法：
+        person.sayName = function(){
+            alert(this.name);
+        }
+        // 调用属性和方法：
+        alert(person.age);
+        person.sayName();
+    </script>
+    <!--2. 通过对象字面量创建一个对象(推荐使用)-->
+    <script>
+        var person2 = {
+            name:'陈欣妮',
+            age: 24,
+            sayName:function(){
+                alert('My name is' + this.name);
+            }
+        }
+        // 调用属性和方法：
+        alert(person2.age);
+        person2.sayName();
+    </script>
+
+    <script>
+        var person3 = {
+            name:"小仙女",
+            age:24,
+            sayName:function () {
+                alert('My name is' + person2.name);
+            }
+        }
+        alert(person3.name);
+        person3.sayName();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

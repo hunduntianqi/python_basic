@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js分支语句</title>
+    <script>
+        /* if条件语句
+            if (判断条件){
+                条件成立执行的代码
+            }
+            */
+        var iNum = 10;
+        if (iNum > 10) {
+            console.log(iNum);
+        };
+        /*if else
+        if (判断条件){
+            条件成立执行的代码
+        }else{
+            条件不成立执行的代码
+        }
+        */
+        if (iNum > 100) {
+            alert("iNum大于100");
+        } else {
+            alert("iNum小于100");
+        };
+
+
+        /*if else if else
+        if (判断条件1){
+            条件1成立执行的代码
+        }else if(判断条件2){
+            条件1不成立,条件2成立执行的代码
+        }else{
+            条件1和条件2都不成立执行的代码
+        };
+        */
+        if (iNum == 100) {
+            alert("成绩为100分");
+        } else if (iNum == 200) {
+            alert("成绩为200");
+        } else {
+            alert("成绩不是100也不是200");
+        };
+
+        /*
+            switch多分支语句:
+                switch(变量或表达式) {
+                    case 匹配条件1:
+                        条件1满足语句;
+                        break;
+                    case 匹配条件2:
+                        条件2满足语句;
+                        break;
+                    case 匹配条件3:
+                        条件3满足语句;
+                        break;
+                    default:
+                        所有条件不满足默认执行语句;
+                }
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js获取页面标签</title>
+    <script>
+        // 需求:使用JS获取HTML标签对象
+        // 内置对象 document,getElementById()找到返回HTML对象,没有找到返回null
+        // 当执行到这行代码的时候,body中的内容还没有执行,所以找不到
+        // var oDiv = document.getElementById('box1');
+        // alert(oDiv);
+
+        // 找不到标签解决方案:让body中的代码执行完成(页面标签加载完成)之后,再执行JS代码,
+        // window.onload 事件触发条件是页面标签加载完成,当页面标签加载完成后,执行后面的
+        // 匿名函数,成为JS的入口函数（JS什么时候执行）
+        window.onload = function() {
+                var oDiv = document.getElementById('box1');
+                alert(oDiv);
+            }
+            // JS的入口函数
+    </script>
+    <style>
+        #box1 {
+            font-size: larger;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">好好学习</div>
+
+</body>
+
+</html>

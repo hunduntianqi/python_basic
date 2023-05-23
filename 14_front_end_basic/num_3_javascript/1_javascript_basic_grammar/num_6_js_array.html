@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js中的数组</title>
+    <script>
+        function array() {
+            // 1.数组的定义
+            // 1.1 使用new创建数组 new Array()
+            var alist1 = new Array(1, 2, 3, 4, 5, 6);
+            // 1.2 使用字面量方式创建数组[]
+            var alist2 = [1, 2, 3, "123"];
+            // 多维数组
+            var alist3 = [[1, 2, 3], [4, 5, 6, 7]];
+            // 2.数组中的常用方法
+            // 2.1 求数组中数据的长度(数据的个数)-length
+            console.log("长度:", alist1.length);
+            console.log("长度:", alist2.length);
+            console.log(alist3, "长度", alist3.length);
+            console.log("=============");
+            // 2.2 数组支持下标(索引)操作,下标从0开始
+            console.log(alist2[0]);
+            console.log(alist1[2]);
+            console.log(alist1[10]);
+            console.log("=============");
+            // 可以根据下标修改数组中的元素
+            alist1[0] = 8;
+            console.log(alist1);
+            console.log("=============");
+            // 使用下标修改,如果下标值不存在,会在指定的位置添加数据,其他位置为空
+            alist2[10] = 13;
+            console.log(alist2);
+            console.log("=============");
+            // 2.3 根据数据值,找这个数据值对应的下标,找到返回下标,没有找到返回-1 indexof(100)
+            console.log(alist1.indexOf(3));
+            console.log(alist1.indexOf(10));
+            console.log("=============");
+            // 2.4 数组尾部添加数据push和删除数据pop
+            alist1.push("添加数据");
+            console.log(alist1);
+            alist1.pop();
+            console.log(alist1);
+            console.log("=============");
+            // 2.5 任意位置添加或删除数据
+            // 数组.splice(start,num,elem...elem)
+            // start:下标,索引,从这个下标位置开始添加或删除数据
+            // num:要删除的数据个数, 该值为0表示不删除数据
+            // 后续参数:要添加的数据
+            // 2.5.1 只删除数据
+            alist2.splice(6, 3);
+            console.log(alist2);
+            // 2.5.2 只添加数据
+            alist1.splice(2, 0, 1, 2, 3, 3, 3, 3,"苹果");
+            console.log(alist1);
+        }
+
+        window.onload=function (){
+            array();
+            alert("数组");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

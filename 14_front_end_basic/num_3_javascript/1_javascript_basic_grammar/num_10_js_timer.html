@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js中的定时器</title>
+<!--
+    js定时器两种创建方式:
+        1. setTimeout(func[, delay, param1, param2, ...]): 以指定的时间间隔(以毫秒计)调用一次函数的定时器
+            参数说明:
+                1. func: 表示定时器要执行的函数名
+                2. delay: 表示时间间隔, 默认是0, 单位是毫秒
+                3. param: 表示定时器执行函数的参数值, 多个参数使用逗号分割
+        2. setInterval(func[, delay, param1, param2, ...]): 以指定的时间间隔重复调用一个函数的定时器
+            参数说明:
+                1. func: 表示定时器要执行的函数名
+                2. delay: 表示时间间隔, 默认是0, 单位是毫秒
+                3. param: 表示定时器执行函数的参数值, 多个参数使用逗号分割
+    js清除定时器:
+        1. clearTimeout(timeoutID): 清除只执行一次的定时器(setTimeout函数)
+        2. clearInterval(timeoutID): 清除反复执行函数的定时器(setInterval函数)
+        timeoutID: 调用定时器函数获得的返回值
+-->
+    <script>
+        // 定义全局变量 oT,确保可以在不同的函数使用
+        var oT = null;
+        // 设置多次定时器
+        function fnClick() {
+            // 局部变量在其他函数中不能使用
+            oT = setInterval(alert, 3000, "好好学习");
+        };
+
+        // 销毁多次定时器
+        function fnStop() {
+            clearInterval(oT);
+        };
+    </script>
+</head>
+
+<body>
+    <p>点击单次定时器按钮,3秒后弹出 hello</p>
+    <!-- 点击按钮的时候创建一个定时器,
+        setTimeout(执行的函数名,时间间隔,函数参数) 创建单次定时器(只执行一次函数)
+    -->
+    <input type="button" value="单次定时器" onclick="setTimeout(alert,3000,'hello')">
+    <p>点击多次定时器按钮,每隔3秒弹出 好好学习,点击停止,不再弹出</p>
+    <input type="button" value="多次定时器" onclick="fnClick()">
+    <input type="button" value="停止" onclick="fnStop()">
+
+</body>
+
+</html>

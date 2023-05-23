@@ -1,0 +1,64 @@
+<!-- css：层叠样式表,是用来美化页面的一种语言
+    css三种引入方式:
+     1.行内式-直接在标签的style属性中添加css样式
+      示例代码:<div style="width:100px;height:100px;background:red">hello</div>
+      优点:方便、直观
+      缺点:缺乏可重用性
+     2.内嵌式(内部样式)
+      在<head>标签中加入<style>标签,在<style>标签中编写css代码
+        示例代码:
+        <head>
+            <style>
+                h3{
+                    color:red;
+                }
+            </style>
+        </head>
+      优点:在同一个页面内部便于复用和维护
+      缺点:在多个页面之间的可重用性不够高
+     3.外链式
+        将css代码写在单独的一个css文件中,在<head>标签中使用<link>标签直接引入css文件到该页面中
+        示例代码：
+        <link rel="stylesheet" type="text/css" href="css/$1_main.css">
+        优点:使得css样式与HTML页面分离,便于整个页面系统的规划和维护,可重用性高
+        缺点:css代码由于分离到单独的css文件,容易出现css代码过于集中,维护不当极容易造成混乱
+    css引入方式选择:
+     1.行内式几乎不用
+     2.内嵌式为教学模式使用
+     3.外链式为公司开发使用
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS引入方式</title>
+    <!-- 2.内嵌式 -->
+    <style>
+        /*在style中写css代码*/
+        /*作用于整个页面的所有的div标签*/
+        /* div{
+            background-color:blue;
+            font-size: large;
+            height: auto;
+            width: auto;
+        } */
+    </style>
+    <!-- 3.外链式 link -->
+    <link rel="stylesheet" href="$1_main.css">
+
+</head>
+<body>
+<!-- 1.行内式 只能在当前标签使用,复用性差,基本不用 -->
+<!-- div标签为容器标签 -->
+<!-- <div style="width:300px; height=:300px; background-color:rosybrown;" -->
+<!-- <div style="height:auto; width:50px; color:burlywood; background-color:blue">
+    itcase
+</div> -->
+<div>
+    郭鹏涛
+</div>
+
+</body>
+</html>

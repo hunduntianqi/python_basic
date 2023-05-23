@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery事件代理</title>
+     <script>
+        // 事件冒泡代码
+        $(function(){
+            var $div1 = $('#div1');
+            var $div2 = $('#div2');
+
+            $div1.click(function(){
+                alert($(this).html());
+            });
+
+            $div2.click(function(){
+                alert($(this).html());
+            });
+        });
+    </script>
+
+</head>
+    <div id="div1" style="width:200px; height:200px; background: red;">
+        <div id="div2" style="width:100px; height:100px;background: yellow;">
+            哈哈
+        </div>
+    </div>
+
+<body>
+
+</body>
+</html>

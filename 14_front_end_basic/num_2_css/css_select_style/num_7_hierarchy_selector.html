@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>层级选择器</title>
+    <style>
+        /* 层级选择器(后代选择器) 在标签嵌套中使用
+        选择器1和选择器2可以是任意一种选择器
+        选择器1 选择器2{
+            属性=值;
+        }
+        */
+        div p {
+            color: crimson;
+        }
+
+        p {
+            color: blue
+        }
+
+    </style>
+</head>
+<body>
+<!-- 具有嵌套关系的标签 -->
+<div>
+    <p>
+        itcase
+    </p>
+</div>
+
+<!-- 没有层级关系的标签 -->
+<p>
+    itcase
+</p>
+</body>
+</html>

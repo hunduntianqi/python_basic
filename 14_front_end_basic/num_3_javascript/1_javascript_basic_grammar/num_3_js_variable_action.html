@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js变量作用域</title>
+    <script>
+        // JS 代码
+        // 局部变量:在函数内部定义的变量
+        // 全局变量:在函数外部定义的变量
+
+        // 1.函数内部能否访问全局变量
+        // 1.1 定义全局变量
+        var iNum = 100;
+        // 1.2 定义函数,验证能否在函数内部访问
+        function func() {
+            // 在函数内部可以直接访问全局变量
+            console.log(iNum);
+            // 在函数内部能否修改全局变量-可以修改
+            // 2.1 在函数内部修改全局变量的值
+            iNum = 1000;
+            // 2.2 在函数内部打印输出修改后全局变量的值
+            console.log("全局变量:" + iNum);
+            // 3.1 定义局部变量
+            var sStr = "局部变量";
+        };
+
+        // 1.3 调用函数
+        func();
+        // 2.3 在函数调用后,函数外部打印全局变量值,看是否被修改
+        console.log(iNum);
+        // 3. 在函数外部是否可以使用局部变量-不可以,下列代码不会执行
+        console.log(sStr);
+        // 3.2 在函数外部不可以使用局部变量,sStr
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

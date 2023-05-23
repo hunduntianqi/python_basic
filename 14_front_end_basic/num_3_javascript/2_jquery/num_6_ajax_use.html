@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax使用</title>
+    <!-- jQuery文件引入 -->
+    <script src="./jquery-1.12.4.min.js"></script>
+    <script>
+        $.ajax({
+            // 1.url 请求地址
+            url:'https://baidu.com/',
+            // 2.type 请求方式，默认是'GET'，常用的还有'POST'
+            type:'GET',
+            // 3.dataType 设置返回的数据格式，常用的是'json'格式
+            dataType:'JSON',
+            // 4.data 设置发送给服务器的数据, 没有参数不需要设置
+
+            // 5.success 设置请求成功后的回调函数
+            success:function (response) {
+                console.log(response);
+            },
+            // 6.error 设置请求失败后的回调函数
+            error:function () {
+                alert("请求失败,请稍后再试!");
+            },
+            // 7.async 设置是否异步，默认值是'true'，表示异步，一般不用写
+            async:true
+        });
+    </script>
+
+    <!-- ajax简化写法-->
+    <script>
+        // 默认为"get"方式
+        $(function(){
+            /*
+             1. url 请求地址
+             2. data 设置发送给服务器的数据, 没有参数不需要设置
+             3. success 设置请求成功后的回调函数
+             4. dataType 设置返回的数据格式，常用的是'json'格式, 默认智能判断数据格式
+            */
+            $.get("https://t.weather.sojson.com/api/weather/city/101010100", function(dat,status){
+                console.log(dat);
+                console.log(status);
+                alert(dat);
+            }).error(function(){
+                alert("网络异常");
+            });
+
+            /*
+             1. url 请求地址
+             2. data 设置发送给服务器的数据, 没有参数不需要设置
+             3. success 设置请求成功后的回调函数
+             4. dataType 设置返回的数据格式，常用的是'json'格式, 默认智能判断数据格式
+            */
+            $.post("test.php", {"func": "getNameAndTime"}, function(data){
+                alert(data.name);
+                console.log(data.time);
+            }, "json").error(function(){
+                alert("网络异常");
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

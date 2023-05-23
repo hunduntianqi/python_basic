@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js中的循环语句</title>
+    <script>
+        // 使用循环遍历一个数组
+        // 定义一个数组
+        aList = [1, 2, 3, 4, 5, 6, 7, 8, 90];
+        /*1.while循环
+        while(判断条件){
+            当循环条件为True,执行的代码
+        }
+        */
+        var iNum = 0;
+        while (iNum < aList.length) {
+            alert(aList[iNum]);
+            iNum++;
+        };
+
+        /* 2. for循环
+        for(表达式1:循环因子的初始值;表达式2:判断条件;表达式3:循环因子数据的改变(i++)){
+            表达式2条件满足时执行的代码
+        }
+        2.1 表达式1只执行1次
+        2.2 表达式2用于判断条件是否满足
+          2.2.1 判断条件不满足,即为False,结束循环
+          2.2.2 判断条件满足,即为True,执行中括号之间的代码
+          2.2.3 中括号之间的代码执行完毕,执行表达式3,循环执行,直到结束循环！！！
+        */
+        for (var m = 0; m < aList.length; m++) {
+            alert(aList[m]);
+        };
+        /*do...while循环
+        先执行代码,再进行判断,代码至少会执行一次
+        do{
+            执行代码
+        }while(判断条件);
+        */
+        var iNum1 = 0;
+        do {
+            alert(aList[iNum1]);
+            iNum1++;
+        } while (iNum1 < aList.length);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

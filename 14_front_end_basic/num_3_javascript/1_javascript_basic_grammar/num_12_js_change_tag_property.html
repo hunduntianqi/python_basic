@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js修改标签属性</title>
+    <style>
+        .btnstyle {
+            background: yellow;
+        }
+    </style>
+    <script>
+        // 函数的定义写在外面,不要写在入口函数中
+        function func() {
+            // 获取input中的标签值
+            var oInput = document.getElementById("box1");
+            var oBtn = document.getElementById("box2");
+            // 获取值.value
+            alert(oInput.value);
+            // 修改属性的值
+            oInput.value="陈欣妮";
+        //    设置标签的属性
+            oBtn.className = "btnstyle"
+            oBtn.style.fontSize="30px";
+        };
+        // 定义入口函数
+        window.onload = function() {
+            // 获取输入框标签
+            var oInput = document.getElementById("box1");
+            //设置获取标签的value
+            alert(oInput.value);
+            // 修改标签的值
+            oInput.value = "123";
+        };
+    </script>
+</head>
+
+<body>
+    <input type="text" value="请输入姓名" id="box1">
+    <br>
+    <input type="button" value="按钮" id="box2" onclick="func()">
+
+</body>
+
+</html>

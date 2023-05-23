@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签和类选择器</title>
+    <style>
+        /* 
+        1.标签选择器
+            标签{
+                属性:值
+            }
+        根据标签来选择标签,以标签开头,此种选择器影响范围大,一般用来做一些通用设置
+        */
+        div {
+            color: blue;
+        }
+
+        p {
+            color: chartreuse;
+        }
+
+        /* 2.类选择器-需要给标签添加一个class属性,一个标签可以使用多个类,一个类选择器可以作用于多个标签
+            .类名{
+                属性:值
+            }
+        */
+        .box1 {
+            color: cornflowerblue;
+        }
+
+        .box2 {
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+<!-- 1.标签选择器 -->
+
+<!-- div标签为蓝色 -->
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<!-- p标签为黄色 -->
+<p>121</p>
+<p>121</p>
+<p>121</p>
+
+<!-- box1字体为浅蓝色 -->
+<div class="box1">box1</div>
+<!-- box2字体为红色 -->
+<div class="box2">box2</div>
+</body>
+</html>

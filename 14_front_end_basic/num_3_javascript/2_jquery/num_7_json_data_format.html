@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json数据格式</title>
+    <script>
+        //json: 本质上是一个字符串,同时还是一种数据格式
+        // 对象格式:一对大括号:key和字符串类型的value都要使用双引号
+        //         每项数据之间使用逗号分隔
+        var sJson1 = '{"name":"郭鹏涛", "age":24}';
+        // json数据转换成JavaScript对象
+        var oPreson = JSON.parse(sJson1);
+        console.log(oPreson);
+        // 获取属性数据
+        console.log(oPreson.name + oPreson.age);
+        console.log("====================");
+
+        // 数组格式:一对中括号, 每项数据之间使用逗号分隔
+        var sJson2 = '[{"name":"郭鹏涛", "age":24}, {"name":"陈欣妮", "age":24}]';
+        // json数据转换JavaScript对象
+        var oPersonArr = JSON.parse(sJson2);
+        console.log(oPersonArr);
+        // 获取属性数据
+        // 通过对应索引下标
+        console.log(oPersonArr[0].name + ":" + oPersonArr[0].age);
+        console.log(oPersonArr[1].name + ":" + oPersonArr[1].age);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+    <style>
+        /* 伪类选择器 主要用在用户和网站的交互上,比如说:鼠标悬停,改变背景色
+        选择器:动作{
+            属性:值;
+        } 
+        */
+        /* 使用标签选择器,对标签进行初始化处理 */
+        div{
+            height: 50px;
+            width: 100px;
+            background-color: darkgoldenrod;
+        }
+
+        /* 使用伪类选择器,做交互,鼠标放上去,改变背景色:hover */
+        div:hover{
+            height: 100px;
+            width: 200px;
+            background-color: darkmagenta;
+
+        }
+    </style>
+</head>
+<body>
+    <div>itcase</div>
+</body>
+</html>

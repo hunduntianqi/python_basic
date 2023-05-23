@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择集过滤</title>
+<!--    引入jQuery-->
+    <script src="./jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(function () {
+            // has(选择器方法过滤)
+            var $div = $("div").has("#mytext");
+            alert($div.length);
+            $div.css({"background":"yellow"});
+
+            // eq(索引方法过滤)
+            var $div0 = $("div").eq(1);
+            alert($div0.length);
+            $div0.css({"background":"red"});
+        });
+    </script>
+</head>
+<body>
+    <div>
+        这是第一个div
+        <br>
+        <hr>
+        <input type="text" id="mytext">
+    </div>
+
+    <div>
+        这是第二个div
+        <br>
+        <input type="text">
+        <input type="button">
+    </div>
+</body>
+</html>

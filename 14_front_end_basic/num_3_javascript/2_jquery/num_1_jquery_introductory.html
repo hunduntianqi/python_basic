@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+    jQuery定义:
+        是对JavaScript的封装, 是免费, 开源的JavaScript函数库, 极大的简化了JavaScript编程
+        作用:
+            与JavaScript作用一样, 负责网页的行为操作, 增加网页和用户的交互效果, jQuery简化了JavaScript编程
+            实现交互效果更简单
+        优点:
+            1. jQuery兼容了现在主流的浏览器, 增加了程序员的开发效率
+            2. jQuery简化了JavaScript编程, 代码编写更加简单
+        jQuery下载网址:
+            https://code.jquery.com/
+            选择下载版本:
+                jQuery Core 1.12.4
+                    uncompressed:未压缩版本
+                    minified:压缩版本
+    jQuery的用法:
+        1. jQuery引入:
+            <script src="jquery文件路径"></script>
+        2. jQuery入口函数:
+            ready函数速度比原生的wiodow.onload更快, 并且可以保证标签元素没有问题
+            两种写法:
+                1. 完整写法:
+                  $(document).ready(function(){
+                       ...
+                  });
+                2. 简化写法:
+                  $(function(){
+                       ...
+                  });
+        3. jQuery的选择器:
+           jquery选择器就是快速选择标签元素, 获取标签的, 选择规则和css样式一样
+           选择器分类:
+            1. 标签选择器
+               例:$('li'): 选择所有的li标签
+            2. 类选择器
+               例:$('.myClass'): 选择class为myClass的标签
+            3. id选择器
+               例:$('#myId'): 选择id为myId的标签
+            4. 层级选择器
+               例:$('#ul1 li span'): 选择ul1标签下的所有li标签下的span标签
+            5. 属性选择器
+               例:$('input[name=first]'): 选择name属性等于first的input标签
+            说明:
+                可以使用length属性来判断标签是否选择成功, 如果length大于0表示选择成功, 否则选择失败
+                代码示例:
+                    $(function () {
+                        result = $("div").length;
+                        alert(result);
+                    });
+        4. 选择集过滤:
+            在选择标签的集合中过滤自己需要的标签
+            过滤操作
+                1. has(选择器名称)方法: 表示选取包含指定选择器的标签
+                    示例代码:
+                        <script>
+                            $(function(){
+                                //  has方法的使用
+                                var $div = $("div").has("#mytext");
+                                //  设置样式
+                                $div.css({"background":"red"});
+                            });
+                        </script>
+                2. eq(索引)方法: 表示选取指定索引的标签, 索引从0开始
+                    示例代码:
+                        <script>
+                            $(function(){
+                                //  has方法的使用
+                                var $div = $("div").has("#mytext");
+                                //  设置样式
+                                $div.css({"background":"red"});
+
+                                //  eq方法的使用
+                                var $div = $("div").eq(1);
+                                //  设置样式
+                                $div.css({"background":"yellow"});
+                            });
+                        </script>
+        5. 选择集转移:
+            选择集转移就是以选择的标签为参照, 然后获取转移后的标签(指以选择的标签为参照物获取其他标签)
+            选择集转移操作:
+                1.$('#box').prev(); 表示选择id是box元素的上一个的同级元素
+                2.$('#box').prevAll(); 表示选择id是box元素的上面所有的同级元素
+                3.$('#box').next(); 表示选择id是box元素的下一个的同级元素
+                4.$('#box').nextAll(); 表示选择id是box元素的下面所有的同级元素
+                5.$('#box').parent(); 表示选择id是box元素的父元素
+                6.$('#box').children(); 表示选择id是box元素的所有子元素
+                7.$('#box').siblings(); 表示选择id是box元素的其它同级元素
+                8.$('#box').find('.myClass'); 表示选择id是box元素的class等于myClass的元素
+            示例代码:
+                <script>
+                    $(function(){
+                        var $div = $('#div01');
+                        $div.prev().css({'color':'red'});
+                        $div.prevAll().css({'text-indent':50});
+                        $div.next().css({'color':'blue'});
+                        $div.nextAll().css({'text-indent':80});
+                        $div.siblings().css({'text-decoration':'underline'})
+                        $div.parent().css({'background':'gray'});
+                        $div.children().css({'color':'red'});
+                        $div.find('.sp02').css({'font-size':30});
+                    });
+                </script>
+
+                <div>
+                    <h2>这是第一个h2标签</h2>
+                    <p>这是第一个段落</p>
+                    <div id="div01">这是一个<span>div</span><span class="sp02">第二个span</span></div>
+                    <h2>这是第二个h2标签</h2>
+                    <p>这是第二个段落</p>
+                </div>
+        6. 获取和设置元素内容:
+            jQuery中的html方法获取和设置标签的html内容
+            示例代码:
+                <script>
+                    $(function(){
+                        var $div = $("#div1");
+                        //  获取标签的html内容
+                        var result = $div.html();
+                        alert(result);
+                        //  设置标签的html内容，之前的内容会清除
+                        $div.html("<span style='color:red'>你好</span>");
+                        //  追加html内容
+                        $div.append("<span style='color:red'>你好</span>");
+                    });
+                </script>
+
+                <div id="div1">
+                    <p>hello</p>
+                </div>
+            说明:
+                给指定标签追加html内容使用append方法
+        7. 获取和设置元素属性
+            使用css方法可以给标签设置样式属性, 给标签设置其他属性可以使用prop方法
+            示例代码:
+                <style>
+                    .a01{
+                        color:red;
+                    }
+                </style>
+
+                <script>
+                    $(function(){
+                        var $a = $("#link01");
+                        var $input = $('#input01')
+
+                        // 获取元素属性
+                        var sId = $a.prop("id");
+                        alert(sId);
+
+                        // 设置元素属性
+                        $a.prop({"href":"http://www.baidu.com","title":'这是去到百度的链接',"class":"a01"});
+
+                        //  获取value属性
+                        // var sValue = $input.prop("value");
+                        // alert(sValue);
+
+                        // 获取value属性使用val()方法的简写方式
+                        var sValue = $input.val();
+                        alert(sValue);
+                        // 设置value值
+                        $input.val("222222");
+                    })
+                </script>
+
+                <a id="link01">这是一个链接</a>
+                <input type="text" id="input01" value="111111">
+            说明:获取value属性和设置value属性还可以通过val方法来完成
+        8. jQuery事件:
+            常用事件:
+                1.click(): 鼠标单击
+                2.blur(): 元素失去焦点
+                3.focus(): 元素获得焦点
+                4.mouseover(): 鼠标进入(进入子元素也触发)
+                5.mouseout(): 鼠标离开(离开子元素也触发)
+                6.ready(): DOM加载完成
+            说明:
+                1. this指的是当前发生事件的对象, 但是他是一个原生js对象
+                2. $(this)指的是当前发生事件的jQuery对象
+        9. 事件代理:
+            利用事件冒泡的原理(事件冒泡就是事件会向它的父级一级一级传递),把事件加到父级上, 通过判断事件来源, 执行相应的子元素的操作, 事
+            件代理首先可以极大减少事件绑定次数, 提高性能, 其次可以让新加入的子元素也可以拥有相同的操作
+        10. JavaScript对象:
+            JavaScript中的所有事物都是对象:字符串, 数值, 数组, 函数等都可以认为是对象,
+            此外, JavaScript允许自定义对象, 对象可以拥有属性和方法
+            JavaScript创建对象两种方法:
+                1. 通过顶级object类型实例化一个对象
+                    示例代码:
+                        <script>
+                            var person = new Object();
+                            // 添加属性：
+                            person.name = 'tom';
+                            person.age = '25';
+                            // 添加方法：
+                            person.sayName = function(){
+                                alert(this.name);
+                            }
+                            // 调用属性和方法：
+                            alert(person.age);
+                            person.sayName();
+                        </script>
+                2. 通过对象字面量创建一个对象
+                    示例代码:
+                        <script>
+                            var person2 = {
+                                name:'Rose',
+                                age: 18,
+                                sayName:function(){
+                                    alert('My name is' + this.name);
+                                }
+                            }
+                            // 调用属性和方法：
+                            alert(person2.age);
+                            person2.sayName();
+                        </script>
+                说明:
+                    调用属性和方法的操作是通过"对象.方法/属性"的方式来完成的, 创建对象推荐使用字面量方式,
+                    因为更加简单
+        11. json介绍:
+            json是 JavaScript Object Notation 的首字母缩写, 翻译过来就是javascript对象表示法,
+            这里说的json就是类似于javascript对象的字符串, 它同时是一种数据格式, 目前这种数据格式比较流行,
+            逐渐替换掉了传统的xml数据格式
+            json的格式:
+                1. 对象格式
+                    使用一对大括号({}), 大括号里面放入key:value形式的键值对, 多个键值对使用逗号分隔
+                    示例:
+                        {
+                            "name":"tom",
+                            "age":18
+                        }
+                    格式说明:json中的(key)属性名称和字符串类型的值需要用双引号引起来, 用单引号或者或者不用引号会导致
+                            读取数据错误
+                2. 数组格式
+                    使用一对中括号([]), 中括号里面的数据使用逗号分隔
+                    示例:
+                        ["tom", 18, "programmer"]
+                说明:
+                    实际开发的json格式较为复杂, 例：
+                        {
+                            "name":"jack",
+                            "age":29,
+                            "hobby":["reading","travel","photography"]
+                            "school":{
+                                "name":"Merrimack College",
+                                "location":"North Andover, MA"
+                            }
+                        }
+            json数据转换为JavaScript对象:
+                json本质上是字符串, 在js中操作json数据, 可以将json字符串转换为JavaScript对象
+                示例代码:
+                    var sJson = '{"name":"tom","age":18}';
+                    var oPerson = JSON.parse(sJson);
+                    // 操作属性
+                    alert(oPerson.name);
+                    alert(oPerson.age);
+        12. ajax:
+            ajax是Asynchronous JavaScript and XML的简写, 是一个前后台配合技术, 可以让JavaScript发送异步的
+          http请求, 与后台通信进行数据的获取, ajax最大的优点是实现局部刷新: ajax发送http请求, 当获取到后台数据
+          时更新页面显示数据实现局部刷新
+            当前端页面想要和后台服务器进行数据交互, 就可以使用ajax
+            在html页面使用ajax需要在web服务器环境下运行, 一般向自己的web服务器发送ajax请求
+            ajax的使用:
+                jQuery将ajax封装成了一个方法$ajax(), 可以直接调用方法执行ajax请求
+                ajax方法参数说明:
+                    1. url:请求地址
+                    2. type:请求方式, 默认时"GET", 常用的还有"POST"
+                    3. dataType:设置返回的数据格式, 常用的是"json"格式
+                    4. data:设置发送给服务器的数据, 没有参数不需要设置
+                    5. success:设置请求成功后的回调函数
+                    6. error:设置请求失败后的回调函数
+                    7. async:设置是否异步, 默认值是"true", 表示异步, 一般不用写
+                        同步和异步说明:
+                          同步:指一个ajax完成另一个才可以发送请求, 需要等待上一个ajax请求完成
+                          异步:指多个ajax同时请求, 不需要等待其他ajax请求完成
+            示例代码:
+                <script>
+                    $.ajax({
+                    // 1.url 请求地址
+                    url:'http://t.weather.sojson.com/api/weather/city/101010100',
+                    // 2.type 请求方式，默认是'GET'，常用的还有'POST'
+                    type:'GET',
+                    // 3.dataType 设置返回的数据格式，常用的是'json'格式
+                    dataType:'JSON',
+                    // 4.data 设置发送给服务器的数据, 没有参数不需要设置
+
+                    // 5.success 设置请求成功后的回调函数
+                    success:function (response) {
+                        console.log(response);
+                    },
+                    // 6.error 设置请求失败后的回调函数
+                    error:function () {
+                        alert("请求失败,请稍后再试!");
+                    },
+                    // 7.async 设置是否异步，默认值是'true'，表示异步，一般不用写
+                    async:true
+                });
+                </script>
+            ajax的简写方式:
+                $ajax按照请求方式可以简写成$.get或者$.post方式
+                参数说明:
+                    $.get(url,data,success(data, status, xhr),dataType).error(func)
+                    $.post(url,data,success(data, status, xhr),dataType).error(func)
+                    1.url:请求地址
+                    2.data:设置发送给服务器的数据，没有参数不需要设置
+                    3.success:设置请求成功后的回调函数:
+                        data:请求的结果数据
+                        status:请求的状态信息, 比如: "success"
+                        xhr:底层发送http请求XMLHttpRequest对象
+                    4.dataType:设置返回的数据格式
+                        "xml"
+                        "html"
+                        "text"
+                        "json"
+                    5.error:表示错误异常处理
+                        func:错误异常回调函数
+                示例代码:
+                     <script>
+                        // 默认为"get"方式
+                        $(function(){
+                            /*
+                             1. url 请求地址
+                             2. data 设置发送给服务器的数据, 没有参数不需要设置
+                             3. success 设置请求成功后的回调函数
+                             4. dataType 设置返回的数据格式，常用的是'json'格式, 默认智能判断数据格式
+                            */
+                            $.get("https://t.weather.sojson.com/api/weather/city/101010100", function(dat,status){
+                                console.log(dat);
+                                console.log(status);
+                                alert(dat);
+                            }).error(function(){
+                                alert("网络异常");
+                            });
+
+                            /*
+                             1. url 请求地址
+                             2. data 设置发送给服务器的数据, 没有参数不需要设置
+                             3. success 设置请求成功后的回调函数
+                             4. dataType 设置返回的数据格式，常用的是'json'格式, 默认智能判断数据格式
+                            */
+                            $.post("test.php", {"func": "getNameAndTime"}, function(data){
+                                alert(data.name);
+                                console.log(data.time);
+                            }, "json").error(function(){
+                                alert("网络异常");
+                            });
+                        });
+                    </script>
+-->
+<body>
+
+</body>
+</html>
